@@ -1,1 +1,12 @@
+body{
+    background-color: aquamarine;
+}
+ul {
+    font-size: 25px;
+    display: inline-block;
+}
 
+.Switch {
+    font-size: 25px;
+    color: rgb(228, 30, 30);
+}

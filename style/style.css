@@ -1,5 +1,5 @@
 body{
-    background-color: aquamarine;
+    background-color: #3664F7;
 }
 ul {
     font-size: 25px;
@@ -10,3 +10,14 @@ ul {
     font-size: 25px;
     color: rgb(228, 30, 30);
 }
+table, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+table{
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    background-color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}

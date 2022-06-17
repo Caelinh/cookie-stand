@@ -163,3 +163,10 @@ section>div{
     max-width:95%;
     object-fit:cover;
 }
+
+table{
+    margin: auto;
+}
+form{
+    margin: auto;
+}

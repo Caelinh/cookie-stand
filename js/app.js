@@ -1,5 +1,5 @@
 'use strict';
-let time = ["", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "total" ];
+let time = ["", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "total"];
 
 function getRandInt(min, max) {
     min = Math.ceil(min);
@@ -7,7 +7,7 @@ function getRandInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-function cookiesPerHr(name,min, max, avgCookies) {
+function cookiesPerHr(name, min, max, avgCookies) {
     let sales = [name]
     for (let i = 0; i < 14; i++) {
         let customers = getRandInt(min, max) * avgCookies
@@ -25,6 +25,7 @@ function sumAnyArray(array) {
     return sum;
 }
 
+let allShops = []
 //Shops
 function shop(name, min, max, avg) {
     this.name = name;
@@ -32,6 +33,7 @@ function shop(name, min, max, avg) {
     this.max = max;
     this.avg = avg;
     this.sales = cookiesPerHr(name, min, max, avg);
+    allShops.push(this);
 }
 
 let seattle = new shop('Seattle', 23, 65, 6.3);
@@ -45,36 +47,50 @@ let paris = new shop('Paris', 20, 38, 2.3);
 let lima = new shop('Lima', 2, 16, 4.6);
 
 
-function hourlyTotal (){
 
-}
-
-
-
-
+let hourlyTotal = ["Hourly total"];
 //creating the table header
 
 function headingRender(time) {
-      
+
     for (let i = 0; i < time.length; i++) {
         let header = document.getElementById('times');
         let headerData = document.createElement('th');
         header.appendChild(headerData);
-        headerData.textContent = time[i]; 
+        headerData.textContent = time[i];
     }
 }
 headingRender(time);
+function hourlyTotals(array) {
+    for (let i = 1; i < array.length; i++) {
+        let total = seattle.sales[i] + tokyo.sales[i] + dubai.sales[i] + paris.sales[i] + lima.sales[i];
+        hourlyTotal.push(total);
+    }
 
-function shopRender(shop,array) {
-    for (let i = 0; i <array.length; i++){
-    let rowName = document.getElementById(shop.name);
-    let rowpush = document.createElement('td');
-    rowName.appendChild(rowpush);
-    rowpush.textContent= array[i];
+}
+hourlyTotals(seattle.sales);
+console.log(hourlyTotal);
+
+
+function totalRender(array) {
+    for (let i = 0; i < array.length; i++) {
+        let rowName = document.getElementById('totals');
+        let rowpush = document.createElement('td');
+        rowName.appendChild(rowpush);
+        rowpush.textContent = array[i];
     }
 }
-shopRender(seattle,seattle.sales);
-shopRender(tokyo,tokyo.sales);
-shopRender(dubai,dubai.sales);
-shopRender(paris,paris.sales);
-shopRender(lima,lima.sales);
+totalRender(hourlyTotal);
+function shopRender(shop, array) {
+    for (let i = 0; i < array.length; i++) {
+        let rowName = document.getElementById(shop.name);
+        let rowpush = document.createElement('td');
+        rowName.appendChild(rowpush);
+        rowpush.textContent = array[i];
+    }
+}
+shopRender(seattle, seattle.sales);
+shopRender(tokyo, tokyo.sales);
+shopRender(dubai, dubai.sales);
+shopRender(paris, paris.sales);
+shopRender(lima, lima.sales);

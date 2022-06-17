@@ -1,11 +1,17 @@
-body{
-    background-color: #3664F7;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(14, 80, 44, 0.623);
+    height:fit-content;
+    margin: 0px 25% ;
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
 }
 ul {
     font-size: 25px;
     display: inline-block;
 }
-
+main{
+    background-color: #f2f2f2af;
+}
 .Switch {
     font-size: 25px;
     color: rgb(228, 30, 30);
@@ -21,3 +27,139 @@ table{
     background-color: white;
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+header {
+    height: 90px;
+    border: thin solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
+  }
+header img{
+    height: 70px;
+    width: 200px;
+}  
+a {
+    width: 120px;
+    height: auto;
+    display: inline-block;
+    margin: auto 60px auto 60px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(235, 232, 227);
+    text-shadow: 1px 1px 1px black;
+  }
+ h2, h3{
+    color: rgb(235, 232, 227);
+    text-shadow: 1px 1px 1px black;
+ }
+#hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+#hero img{
+    max-width: 60%;
+}
+section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    
+}
+section img{
+    margin: 15px;
+}
+#next {
+    margin: 15px 200px 15px 260px;
+}
+#next>aside{
+    background-color: rgba(14, 117, 117, 0.805);
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
+    border-radius: 20px;
+
+}
+#aside1{
+    width: 465px;
+    display: inline-block;
+    height: 400px;
+    border: thin solid black;
+    margin-right: 15px;
+    vertical-align: top;
+    object-fit: contain;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+#aside1 img{
+    width: 70%;
+    height: 70%;
+    margin-top: 50px;
+
+}
+#aside2{
+    display: inline-block;
+    width: 465px;
+    height:300px;
+    border: thin solid black;
+    margin-left: 15px;
+    vertical-align: top;
+}
+footer{
+    height: 100px;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
+    
+}
+footer>p{
+    display: inline-block;
+    vertical-align: top;
+}
+#button{
+    position: relative;
+    left: 520px;
+    bottom: 70px;
+    size: 50px;
+    background-color: rgb(14, 117, 117);
+    width: 250px;
+    height: 75px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 30px;
+    height: auto;
+    box-shadow: 2px 5px 4px rgb(73, 69, 69);
+    
+    
+
+}
+section div{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(14, 117, 117, 0.805);
+}
+section>div{
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
+
+}
+#family{
+    width: 500px;
+    height: 375px;
+    background-color:rgba(14, 117, 117, 0.805);
+    
+}
+#family img{
+    max-width:95%;
+    object-fit:cover;
+}

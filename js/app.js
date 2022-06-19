@@ -88,6 +88,7 @@ function totalRender(array) {
     }
 }
 totalRender(hourlyTotal);
+console.log(hourlyTotal);
 function shopRender(shop, array) {
     let bodyName = document.getElementById("body");
     let newRow = document.createElement('tr');
@@ -110,8 +111,6 @@ formElement.addEventListener('submit', function (event) {
     let newShop = new shop(location, min, max, newavg);
 
     newShop.hourlyTotals(newShop.sales);
-
-    
 })
 //generating table hourly totals
 seattle.hourlyTotals(seattle.sales);
@@ -119,5 +118,3 @@ tokyo.hourlyTotals(tokyo.sales);
 dubai.hourlyTotals(dubai.sales);
 paris.hourlyTotals(paris.sales);
 lima.hourlyTotals(lima.sales);
-
-console.log(hourlyTotal)

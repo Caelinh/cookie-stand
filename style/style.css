@@ -26,9 +26,6 @@ table{
     text-align: center;
     background-color: white;
 }
-table footer{
-    width: auto;
-}
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 header {

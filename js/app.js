@@ -25,7 +25,7 @@ function sumAnyArray(array) {
     }
     return sum;
 }
-
+let hourlyTotal = ['Hourly Totals',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 let allShops = []
 //Shops
 function shop(name, min, max, avg) {
@@ -36,6 +36,7 @@ function shop(name, min, max, avg) {
     this.sales = cookiesPerHr(name, min, max, avg);
     allShops.push(this);
     shopRender(this.name, this.sales);
+
 }
 
 let seattle = new shop('Seattle', 23, 65, 6.3);
@@ -47,10 +48,9 @@ let dubai = new shop('Dubai', 11, 38, 3.7);
 let paris = new shop('Paris', 20, 38, 2.3);
 
 let lima = new shop('Lima', 2, 16, 4.6);
-console.log(allShops)
 
 
-let hourlyTotal = ["Hourly total"];
+
 //creating the table header
 
 function headingRender(time) {
@@ -64,14 +64,19 @@ function headingRender(time) {
 }
 headingRender(time);
 
-function hourlyTotals(array) {
-    for (let i = 1; i < array.length; i++) {
-        let total = seattle.sales[i] + tokyo.sales[i] + dubai.sales[i] + paris.sales[i] + lima.sales[i];
-        hourlyTotal.push(total);
-    }
+// function hourlyTotals(array) {
+//     for (let i = 1; i < array.length; i++) {
+//         hourlyTotal[i] = hourlyTotal[i] + array[i]
+//     }
 
+// }
+// hourlyTotals(seattle.sales)
+// hourlyTotals(tokyo.sales)
+shop.prototype.hourlyTotals = function(array) {
+    for (let i = 1 ; i < array.length; i++) {
+        hourlyTotal[i] = hourlyTotal[i] + array[i]
+    }
 }
-hourlyTotals(seattle.sales);
 
 
 function totalRender(array) {
@@ -103,4 +108,16 @@ formElement.addEventListener('submit', function (event) {
     let max = event.target.maximum.value;
     let newavg = event.target.average.value;
     let newShop = new shop(location, min, max, newavg);
+
+    newShop.hourlyTotals(newShop.sales);
+
+    
 })
+//generating table hourly totals
+seattle.hourlyTotals(seattle.sales);
+tokyo.hourlyTotals(tokyo.sales);
+dubai.hourlyTotals(dubai.sales);
+paris.hourlyTotals(paris.sales);
+lima.hourlyTotals(lima.sales);
+
+console.log(hourlyTotal)

@@ -15,16 +15,19 @@ main{
 .Switch {
     font-size: 25px;
     color: rgb(228, 30, 30);
+    margin-top: 100px;
+    margin-right: 500px;
 }
 table, td {
     border: 1px solid;
     border-collapse: collapse;
 }
 table{
-    width: 50%;
+    width: auto;
     height: 200px;
     text-align: center;
     background-color: white;
+    
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
 
@@ -36,6 +39,10 @@ header {
     align-items: center;
     background-color: rgb(14, 117, 117);
     box-shadow: 2px 2px 10px rgb(105, 101, 101);
+  }
+  header a{
+    font-family: 'Cairo', sans-serif;
+    color: rgb(248, 213, 97);
   }
 header img{
     height: 70px;
@@ -58,16 +65,19 @@ a {
     color: rgb(235, 232, 227);
     text-shadow: 1px 1px 1px rgb(46, 45, 45);
     text-decoration: none;
+    
   }
  
   h2 {
     color: salmon;
     text-shadow: 1px 1px 1px rgb(32, 32, 32);
+    font-size: 30px
  }
 
  h3 {
     color: #f2f2f2;
     text-shadow: 1px 1px 1px rgb(32, 32, 32);
+    font-size: larger;
  }
 #hero {
     display: flex;
@@ -93,11 +103,19 @@ border-top: 8px solid rgb(14, 117, 117);
   border-radius: 5px;
 
 }
+#merch img{
+    height: 75%;
+}
+img {
+    border-radius: 20px ;
+}
 section {
     margin-top: 30px;
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
     
     
 }
@@ -105,7 +123,11 @@ section img{
     margin: 15px;
 }
 #next {
-    margin: 15px auto 15px 260px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 60px;
+    
 }
 #next>aside{
     background-color: rgba(14, 117, 117, 0.805);
@@ -114,32 +136,34 @@ section img{
 
 }
 #aside1{
-    width: 465px;
     display: inline-block;
+    width: 400px;
     height: 400px;
     border: thin solid black;
-    margin-right: 15px;
     vertical-align: top;
     object-fit: contain;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+    margin-right: 15px;
     
 }
 #aside1 img{
     width: 70%;
     height: 70%;
     margin-top: 50px;
+    border-radius: 20px;
+    border: thin solid black;
 
 }
 #aside2{
     display: inline-block;
-    width: 465px;
+    width: 400px;
     height:300px;
     border: thin solid black;
-    margin-left: 15px;
     vertical-align: top;
     text-align: center;
+    margin-left: 15px;
 }
 #aside2 > *{
     margin: 5px;
@@ -149,6 +173,7 @@ section img{
 }
 #aside2 p{
     font-size: 30px;
+    
 }
 footer{
     height: 100px;
@@ -161,11 +186,10 @@ footer{
 footer>p{
     display: inline-block;
     vertical-align: top;
+    color: #f2f2f2;
 }
 #button{
-    position: relative;
-    left: 520px;
-    bottom: 70px;
+    
     size: 50px;
     background-color: rgb(14, 117, 117);
     width: 250px;
@@ -175,9 +199,8 @@ footer>p{
     padding: 30px;
     height: auto;
     box-shadow: 2px 5px 4px rgb(73, 69, 69);
-    
-    
-
+    margin-top: 60px;
+   
 }
 section div{
     text-align: center;
@@ -185,7 +208,8 @@ section div{
     font-weight: bold;
     background-color: rgba(14, 117, 117, 0.805);
     border-radius: 20px;
-    box-shadow: 2px 2px 10px rgb(105, 101, 101)
+    box-shadow: 2px 2px 10px rgb(105, 101, 101);
+    font-size: 20px;
 }
 #donate{
     display: block;
@@ -195,6 +219,7 @@ section div{
     margin: auto;
     width: 100%;
     text-align: center;
+    font-size: 20px;
    
 
 }
@@ -212,6 +237,12 @@ section div{
     align-items: center;
 }
 
+#bye{
+    color: salmon;
+    margin-top: 10px;
+    size: 60px;
+}
+
 table{
     margin: auto;
     font-family : Arial, Helvetica, sans-serif;
@@ -219,3 +250,24 @@ table{
 form{
     margin: auto;
 }
+.sales{
+    background-color: #f6f6f6;
+    height: 100%;
+    text-align: center;
+
+}
+.sales h1{
+    color: salmon;
+}
+article {
+    background-color: rgba(14, 117, 117, 0.805);
+    margin: auto;
+}
+fieldset{
+    text-align: center;
+    height:60px;
+    margin-top: 30px;
+    padding: 3px;
+}
+button {
+margin-top: 15px;}

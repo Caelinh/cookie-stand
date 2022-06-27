@@ -7,7 +7,6 @@ Currently deployed
 - Homepage
 - sales table
 - sales table accepts inputs
+- hourly totals input
+- styling completed
 
-(working on)
-- creating a more visually appealing hompage that is more reactive
-- hourly totals for the sales chart.

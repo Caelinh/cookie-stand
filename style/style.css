@@ -105,6 +105,7 @@ border-top: 8px solid rgb(14, 117, 117);
 }
 #merch img{
     height: 75%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 img {
     border-radius: 20px ;
@@ -137,6 +138,7 @@ section img{
 }
 #aside1{
     display: inline-block;
+    flex-wrap: wrap;
     width: 400px;
     height: 400px;
     border: thin solid black;
@@ -149,11 +151,12 @@ section img{
     
 }
 #aside1 img{
-    width: 70%;
-    height: 70%;
+    width: 9rem;
+    height:auto;
     margin-top: 50px;
     border-radius: 20px;
     border: thin solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 }
 #aside2{
@@ -213,6 +216,7 @@ section div{
 }
 #donate{
     display: block;
+
     
 }
 #donate> a {
@@ -235,6 +239,7 @@ section div{
     object-fit:cover;
     border: solid thin black;
     align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 #bye{

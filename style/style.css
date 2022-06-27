@@ -15,8 +15,7 @@ main{
 .Switch {
     font-size: 25px;
     color: rgb(228, 30, 30);
-    margin-top: 100px;
-    margin-right: 500px;
+   text-emphasis: left;
 }
 table, td {
     border: 1px solid;
@@ -267,12 +266,20 @@ form{
 article {
     background-color: rgba(14, 117, 117, 0.805);
     margin: auto;
+    height: 100%;
 }
 fieldset{
     text-align: center;
-    height:60px;
+    height:auto;
     margin-top: 30px;
     padding: 3px;
 }
 button {
-margin-top: 15px;}
+margin-top: 15px;
+}
+label{
+    display: block;
+}
+body.sales{
+    height: 50rem;
+}

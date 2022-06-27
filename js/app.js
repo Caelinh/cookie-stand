@@ -23,7 +23,7 @@ function shop(name, min, max, avg) {
     this.avg = avg;
     this.salesPerHr = [];
     this.totalSales = 0;
-    this.hourlyTotal = ["",];
+    this.hourlyTotal = [];
 
     // allShops.push(this);
 }
@@ -34,6 +34,7 @@ shop.prototype.cookiesPerHr = function () {
         this.salesPerHr.push(sales);
         this.totalSales += sales;
     }
+    this.salesPerHr.push(this.totalSales)
 }
 
 
@@ -57,39 +58,39 @@ shop.prototype.shopRender = function () {
 
     //name cell
     let nameCell = document.createElement('td');
-    let rowName = document.getElementById('totals');
+    
     nameCell.textContent = this.name;
     newRow.appendChild(nameCell);
 
     //adding sales data
     for (let i = 0; i < this.salesPerHr.length; i++) {
         let rowpush = document.createElement('td');
-        let totalPush = document.createElement('td');
+        
         newRow.appendChild(rowpush);
         rowpush.textContent = this.salesPerHr[i];
         //total per hour
-        rowName.appendChild(totalPush)
-        totalPush.textContent = this.hourlyTotal[i];
-        
+       }
+    console.log(seattle.hourlyTotal)
+}
+shop.prototype.renderTotals = function(){
+    for (let i = 0; i < this.hourlyTotal.length; i++){
+    let rowName = document.getElementById('totals');
+    let totalPush = document.createElement('td');
+    rowName.appendChild(totalPush)
+    totalPush.textContent = this.hourlyTotal[i];
+    console.log(this.hourlyTotal)
     }
-    //adding total
-    let total = document.createElement('td');
-    total.textContent = this.totalSales;
-    newRow.appendChild(total);
-
-
 }
 
 shop.prototype.hourlyTotals = function () {
-
     for (let i = 0; i < this.salesPerHr.length; i++) {
      
-     let total = seattle.salesPerHr[i] + tokyo.salesPerHr[i] + dubai.salesPerHr[i] + paris.salesPerHr[i] + lima.salesPerHr[i]
-     this.hourlyTotal.push(total)
-    
+     let total = seattle.salesPerHr[i] + tokyo.salesPerHr[i] + 
+     dubai.salesPerHr[i] + paris.salesPerHr[i] + lima.salesPerHr[i]
+     this.hourlyTotal.push(total);
     }
+    
 }
-
 
 let formElement = document.getElementById('updateShop');
 
@@ -102,6 +103,7 @@ formElement.addEventListener('submit', function (event) {
     let newShop = new shop(location, min, max, newavg);
     newShop.cookiesPerHr();
     newShop.shopRender();
+    newShop.hourlyTotals();
 })
 //generating table hourly totals
 let seattle = new shop('Seattle', 23, 65, 6.3);
@@ -120,9 +122,10 @@ tokyo.cookiesPerHr();
 dubai.cookiesPerHr();
 paris.cookiesPerHr();
 lima.cookiesPerHr();
-seattle.hourlyTotals();
 seattle.shopRender();
+seattle.hourlyTotals();
 tokyo.shopRender();
 dubai.shopRender();
 paris.shopRender();
 lima.shopRender();
+seattle.renderTotals();
